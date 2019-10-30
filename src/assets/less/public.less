@@ -1,0 +1,161 @@
+// @h: 200px;
+// @base: #f938ab;
+@twenty: 1.429rem; //20px的参数
+@fo_s_12: 0.858rem; //字体12px
+@p_s: 1.143rem; //为16px
+body {
+    overflow-x: hidden;min-width: 320px;color: #333;background: #00152a;
+}
+.wrapper {position: absolute; margin-top: .714rem; top: 4.5rem; right: 0; left: 0;bottom: 0;width: 100%; display: block;overflow-y: auto;-webkit-overflow-scrolling: touch;}
+.box(@base: #f938ab, @w: 100px, @h: 100px, ){
+    color: saturate(@base, 5%);
+    border-color: lighten(@base, 30%);
+    background: lighten(@base, 10%);
+    width: @w;
+    height: @h;
+  }
+
+.complete(@color1, @color2) {
+    background: linear-gradient(to right, @color1, @color2); /* 标准的语法（必须放在最后） */
+}
+
+// input框的placeholder的字体颜色
+.inputPlaceCol(@color:#244b72){
+    input::-moz-placeholder,textarea::-moz-placeholder{color:@color;}
+    input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:@color;}
+    input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:@color;}
+}
+
+// header {
+//     position:absolute;left:0; top:0;width: 100%; height:4.5rem; background: #002041;line-height: 4.5rem; -webkit-box-shadow: none !important;
+//     box-shadow: none !important;color: #fff;text-align: center;padding: 0 @p_s;
+// 
+//     i.iconfont{font-size: @p_s;float: left;}
+//     h1{display: inline-block; font-size:@fo_s_12 +  0.57rem;}
+//     span{float: right;}
+// }
+
+footer { 
+    position: fixed; z-index: 10; right: 0; left: 0; bottom: 0;display: table;width: 100%; height: 3.572rem;padding: 0;table-layout: fixed;border-top: 0;
+    border-bottom: 0; padding: 0 .715rem;  background: #002041;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,.3); box-shadow: 0 0 2px rgba(0,0,0,.3); -webkit-backface-visibility: hidden; backface-visibility: hidden;
+
+    a {
+        display: table-cell; overflow: hidden; width: auto; height: 3.572rem;text-align: center; vertical-align: middle;white-space: nowrap;text-overflow: ellipsis;
+        position: relative;color: #007aff;
+        
+        .iconfont {
+            position: relative;display: inline-block; margin: 0 auto;font-size: 1.572rem;width: 1.572rem; height: 2.143rem;
+        }
+        .foot_tab {
+            display: block; font-size: 0.858rem;
+        }
+    }
+
+    a.active{ color: #fff;}
+}
+// input框样式   如： 登录、注册
+.public_input {
+    width: 100%;padding: 0 @p_s;background: #002041;
+
+    li {
+        display: flex; width: 100%; height: 3.929rem;line-height: 3.929rem;overflow: hidden;border-bottom: 1px solid #244b72;font-size: 1.072rem; color: #fff;
+        input {flex-wrap: nowrap;text-align: left;height: 3.929rem;line-height: 1.572rem;font-size: 1.286rem;color: #fff;}
+        input:disabled{color:#999;}
+        .verification {
+            width: 25%;height: 2.215rem;line-height: 2.215rem;font-size: 11px;text-align: center;border: 1px solid #0075eb;margin-top: 14px;padding: 0px 5px;border-radius: 15px;color: #448aca;
+        }
+        span {flex-wrap: nowrap;min-width: 20%; width: auto; text-align: left; }
+        span.lo_re_adress{padding-left: .714rem;}
+    }
+}
+.home_bill_list{
+    margin-bottom: 2.143rem; padding: 0 @twenty; background: #002041;
+    li {    
+        height: 3.572rem;padding: 1.072rem 0; overflow: hidden;color: #fff;text-align: left; border-bottom: 1px #244b72 solid;
+        h3 {
+            font-size: 1.072rem; display: inline-block; line-height: @twenty;
+            em {    
+                width: @twenty; margin-right: 2px; border-radius: 50%;display: inline-block; text-align: center; line-height: @twenty;
+            }
+        }
+        span{
+            float: right; font-size: 1.072rem;font-weight: bold;
+        }
+    }
+}
+
+.pualic_detail_list { 
+    li {
+        height: auto;line-height: 3.572rem;background: #002041; margin: 1px 0px; padding: 0 20px;color: #fff;text-align: left;
+        h3 {
+            font-size: @p_s - 0.071rem;display: inline-block;
+        }
+        span {
+            float: right;font-size: @p_s - 0.071rem;font-weight: bold;
+        }
+    }
+}
+
+.public-my-info{margin-bottom: 2.143rem; padding: 0 1.429rem; background: #002041;
+    li{ height: 3.571rem; line-height: 3.571rem; background: #002041; color: #244b72; text-align: right;  border-bottom: 1px #244b72 solid; overflow: hidden;
+        h3{ font-size: 1.071rem; color: #fff; float: left; line-height: 3.571rem;}
+        span{font-size: 1.071rem; padding-right:.429rem;
+            img{width: 2.143rem; height: 2.143rem; border-radius: 50%;}
+        }
+        i {float: right; color: #fff;}
+
+    }
+}
+
+//提现、充值的输入显示框
+.public_box{ padding: 0 1.429rem; background: #002041; color: #fff; padding-bottom: 1.429rem;
+    .public_num{
+        border-bottom: 1px solid #244b72; text-align: center; padding: 10px 0;
+
+        h3{ line-height: 2.858rem; font-size: 1.144rem;}
+        .money-type{ line-height: 2.857rem; padding-bottom: 10px; font-size: 16px; color: #0075EB;
+             .money {
+                span{font-size: 1.071rem; font-weight: bold;}
+                i {padding-left: .714rem;}
+             }
+        }
+
+        .money_box {
+            input{width: 100%;height: 10rem;line-height: 100%;font-size: 2.857rem;background: #032F5B;border-radius: 10px;padding: 0 30px;}
+            input::-moz-placeholder,textarea::-moz-placeholder{color:#ccc; font-size: 1.715rem;}
+            input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#ccc; font-size: 1.715rem;}
+            input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ccc; font-size: 1.715rem;}	
+        }
+    }
+    .rec_num:last-child{ border-bottom: none;}
+}
+
+
+.logo-img { 
+    text-align: center; height: 10rem; padding: 2.858rem 0;
+    img { height: 80%;}
+}
+.detarecord {
+    height: 3.572rem; line-height: 3.429rem; color: #fff; 
+    .active {color: #fff;border-bottom: 1px solid #3E75C8}
+}
+.log_box {
+    .login_hidden {display: none;}
+}
+.detarecordtwo { float: left; cursor: pointer; width: 50%; text-align: center; font-size: @p_s - 0.071rem; }
+
+
+.all_button{width: 100%;text-align: center;margin: 2.143rem 0;}
+.all_button button{width: 85%; height: 3.286rem;color: #fff;font-size: 18px;border-radius: @twenty; background: #0075eb;}
+
+/*币种图标颜色*/
+.A,.F,.K,.P,.U,.Z{ background: #e8700a;}
+.B,.G,.L,.Q,.V{ background: #518ae1;}
+.C,.H,.M,.R,.W{ background: #3ec157;}
+.D,.I,.N,.S,.X{ background: #577a94;}
+.E,.J,.O,.T,.Y{ background: #399f83;}
+
+.otc-back{ cursor: pointer;}        /* 解决ios下，不可点击元素无法冒泡的问题（导致委托监听事件无效） */
+
+.loadMore{width: 100%; height: 2.142rem; line-height: 2.142rem; text-align: center;font-size: 1.214rem; margin-bottom: 0.714rem;}
